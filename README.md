@@ -1,11 +1,11 @@
 # Hardhat Boilerplate
 
 This repository contains a sample project that you can use as the starting point
-for your Ethereum project. It's also a great fit for learning the basics of
-smart contract development.
+for your Fhenix project. It's also a great fit for learning the basics of
+Fhenix smart contract development.
 
 This project is intended to be used with the
-[Hardhat Beginners Tutorial](https://hardhat.org/tutorial), but you should be
+[Fhenix Hardhat Beginners Tutorial](TODO), but you should be
 able to follow it by yourself by reading the README and exploring its
 `contracts`, `tests`, `scripts` and `frontend` directories.
 
@@ -17,7 +17,7 @@ dependencies:
 ```sh
 git clone https://github.com/NomicFoundation/hardhat-boilerplate.git
 cd hardhat-boilerplate
-npm install
+pnpm install
 ```
 
 Once installed, let's run Hardhat's testing network:
