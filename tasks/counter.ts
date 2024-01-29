@@ -5,7 +5,9 @@ task("counter").setAction(async function (_taskArguments: TaskArguments, hre) {
   const { fhenix, ethers, deployments } = hre;
   const [signer] = await ethers.getSigners();
 
-  await fhenix.getFunds(signer.address);
+  if ((await ethers.provider.getBalance(signer.address)) === 0n) {
+    await fhenix.getFunds(signer.address);
+  }
 
   const { deploy } = deployments;
 
@@ -20,13 +22,15 @@ task("counter").setAction(async function (_taskArguments: TaskArguments, hre) {
 
   const contract = await ethers.getContractAt("Counter", deployResult.address);
 
-  await contract.connect(signer).add(fhenix.encrypt_uint32(12));
+  await contract.connect(signer).add(await fhenix.encrypt_uint32(12));
 
-  const sealedResult = contract.callStatic.counter(
-    (await fhenix.fhePublicKey)?.serialize()
-  );
+  const permit = await fhenix.generatePermit(deployResult.address);
 
-  const result = fhenix.unseal(deployResult.address, await sealedResult);
+  const sealedResult = await contract
+    .connect(signer)
+    .counter("0x" + permit.sealingKey.publicKey);
+
+  const result = permit.sealingKey.unseal(sealedResult);
 
   console.log("result:", result);
 });
