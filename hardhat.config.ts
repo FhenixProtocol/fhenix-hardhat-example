@@ -8,10 +8,8 @@ import { HardhatUserConfig } from "hardhat/config";
 import "./tasks/counter";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
   defaultNetwork: "localfhenix",
   networks: {
-    // docker run --rm -it -p 8545:8547 -p 8548:8548 -p 3000:3000 --name localfhenix ghcr.io/fhenixprotocol/fhenix-node-dev:v0.0.9-standalone
     localfhenix: {
       url: "http://127.0.0.1:8545",
       accounts: {
@@ -21,6 +19,22 @@ const config: HardhatUserConfig = {
         initialIndex: 0,
         count: 20,
         passphrase: "",
+      },
+    },
+  },
+  solidity: {
+    version: "0.8.19",
+    settings: {
+      metadata: {
+        // Not including the metadata hash
+        // https://github.com/paulrberg/hardhat-template/issues/31
+        bytecodeHash: "none",
+      },
+      // Disable the optimizer when debugging
+      // https://hardhat.org/hardhat-network/#solidity-optimizer-support
+      optimizer: {
+        enabled: false,
+        runs: 800,
       },
     },
   },

@@ -4,6 +4,7 @@ import type { TaskArguments } from "hardhat/types";
 task("counter").setAction(async function (_taskArguments: TaskArguments, hre) {
   const { fhenix, ethers, deployments } = hre;
   const [signer] = await ethers.getSigners();
+
   await fhenix.getFunds(signer.address);
 
   const { deploy } = deployments;

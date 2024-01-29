@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A boilerplate repository to get you started with Hardhat and Ethereum development",
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
+    "task:counter": "hardhat counter"
   },
   "repository": {
     "type": "git",
@@ -25,13 +27,12 @@
     "@nomiclabs/hardhat-ethers": "^2.2.1",
     "@nomiclabs/hardhat-etherscan": "^3.1.4",
     "chai": "^4.3.7",
+    "cross-env": "^7.0.3",
     "ethers": "^5.7.2",
     "fhenix-hardhat-plugin": "github:FhenixProtocol/fhenix-hardhat-plugin",
     "hardhat": "^2.12.5",
+    "hardhat-deploy": "^0.11.45",
     "hardhat-gas-reporter": "^1.0.9",
     "solidity-coverage": "^0.8.2"
-  },
-  "dependencies": {
-    "hardhat-deploy": "^0.11.45"
   }
 }
