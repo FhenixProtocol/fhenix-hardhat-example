@@ -40,7 +40,7 @@ devDependencies:
     version: 5.7.2
   fhenix-hardhat-plugin:
     specifier: github:FhenixProtocol/fhenix-hardhat-plugin
-    version: github.com/FhenixProtocol/fhenix-hardhat-plugin/ac73696838241c71abe9299a75b7fd0d69559f15(hardhat@2.19.4)
+    version: github.com/FhenixProtocol/fhenix-hardhat-plugin/74cbdd2aab3734bec7f277e45be77c388be03486(hardhat@2.19.4)
   hardhat:
     specifier: ^2.12.5
     version: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
@@ -4252,9 +4252,9 @@ packages:
       ethers: 5.7.2
     dev: true
 
-  github.com/FhenixProtocol/fhenix-hardhat-plugin/ac73696838241c71abe9299a75b7fd0d69559f15(hardhat@2.19.4):
-    resolution: {tarball: https://codeload.github.com/FhenixProtocol/fhenix-hardhat-plugin/tar.gz/ac73696838241c71abe9299a75b7fd0d69559f15}
-    id: github.com/FhenixProtocol/fhenix-hardhat-plugin/ac73696838241c71abe9299a75b7fd0d69559f15
+  github.com/FhenixProtocol/fhenix-hardhat-plugin/74cbdd2aab3734bec7f277e45be77c388be03486(hardhat@2.19.4):
+    resolution: {tarball: https://codeload.github.com/FhenixProtocol/fhenix-hardhat-plugin/tar.gz/74cbdd2aab3734bec7f277e45be77c388be03486}
+    id: github.com/FhenixProtocol/fhenix-hardhat-plugin/74cbdd2aab3734bec7f277e45be77c388be03486
     name: fhenix-hardhat-plugin
     version: 0.0.1
     requiresBuild: true

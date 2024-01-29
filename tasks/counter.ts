@@ -20,16 +20,13 @@ task("counter").setAction(async function (_taskArguments: TaskArguments, hre) {
 
   const contract = await ethers.getContractAt("Counter", deployResult.address);
 
-  await contract.connect(signer).add(fhenix.fhenixjs.encrypt_uint32(12));
+  await contract.connect(signer).add(fhenix.encrypt_uint32(12));
 
   const sealedResult = contract.callStatic.counter(
-    (await fhenix.fhenixjs.fhePublicKey)?.serialize()
+    (await fhenix.fhePublicKey)?.serialize()
   );
 
-  const result = fhenix.fhenixjs.unseal(
-    deployResult.address,
-    await sealedResult
-  );
+  const result = fhenix.unseal(deployResult.address, await sealedResult);
 
   console.log("result:", result);
 });
