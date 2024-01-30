@@ -1,11 +1,15 @@
 {
-  "name": "hardhat-boilerplate",
+  "name": "fhenix-hardhat-example",
   "version": "1.0.0",
   "description": "A boilerplate repository to get you started with Hardhat and Ethereum development",
   "scripts": {
     "test": "hardhat test",
     "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
-    "task:counter": "hardhat counter"
+    "task:deploy": "hardhat deploy",
+    "task:addCount": "hardhat task:addCount",
+    "task:getCount": "hardhat task:getCount",
+    "fhenix:start": "hardhat localfhenix:start",
+    "fhenix:stop": "hardhat localfhenix:stop"
   },
   "repository": {
     "type": "git",
@@ -20,19 +24,21 @@
   "devDependencies": {
     "@ethersproject/abi": "^5.7.0",
     "@ethersproject/providers": "^5.7.2",
-    "@fhenixprotocol/contracts": "^0.0.3",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
-    "@nomicfoundation/hardhat-ethers": "^3.0.0",
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "@nomicfoundation/hardhat-verify": "^1.0.0",
-    "chai": "^4.3.7",
-    "cross-env": "^7.0.3",
-    "ethers": "^6.4.0",
-    "fhenix-hardhat-plugin": "github:FhenixProtocol/fhenix-hardhat-plugin",
-    "hardhat": "^2.12.5",
-    "hardhat-deploy": "^0.11.45",
+    "@fhenixprotocol/contracts": "^0.1.0-beta.3",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@openzeppelin/contracts": "^5.0.1",
+    "chai": "^4.4.1",
+    "hardhat": "^2.19.4",
+    "hardhat-fhenix": "file:../fhenix-hardhat-plugin/packages/hardhat-fhenix",
+    "hardhat-fhenix-docker": "file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker",
     "hardhat-gas-reporter": "^1.0.9",
     "solidity-coverage": "^0.8.2"
+  },
+  "dependencies": {
+    "fhenix-hardhat-plugin-root": "github:FhenixProtocol/fhenix-hardhat-plugin"
   }
 }

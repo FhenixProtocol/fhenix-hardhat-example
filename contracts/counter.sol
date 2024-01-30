@@ -1,22 +1,40 @@
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.13 <0.9.0;
+pragma solidity >=0.8.20 <0.9.0;
 
 import "@fhenixprotocol/contracts/FHE.sol";
+import {Permissioned, Permission} from "@fhenixprotocol/contracts/access/Permissioned.sol";
 
-contract Counter {
+contract Counter is Permissioned {
     euint32 private counter;
+    address public owner;
 
-    constructor() {
-        counter = FHE.asEuint32(0);
+    constructor () {
+        owner = msg.sender;
     }
 
     function add(bytes calldata encryptedValue) public {
         euint32 value = FHE.asEuint32(encryptedValue);
-        counter = FHE.add(counter, value);
+        counter = counter + value;
     }
 
-    function getCounter(bytes32 publicKey) public view returns (bytes memory) {
-        return FHE.sealoutput(counter, publicKey);
+    function getCounter() public view returns (uint256) {
+        return FHE.decrypt(counter);
+    }
+
+    function getCounterPermit(Permission memory permission)
+    public
+    view
+    onlySender(permission)
+    returns (uint256) {
+        return FHE.decrypt(counter);
+    }
+
+    function getCounterPermitSealed(Permission memory permission)
+    public
+    view
+    onlySender(permission)
+    returns (bytes memory) {
+        return FHE.sealoutput(counter, permission.publicKey);
     }
 }
