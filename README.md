@@ -1,4 +1,7 @@
-# Fhenix Hardhat Example
+# Fhenix Hardhat Example [![Open in Gitpod][gitpod-badge]][gitpod]
+
+[gitpod]: https://gitpod.io/#https://github.com/fhenixprotocol/fhenix-hardhat-example
+[gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
 
 This repository contains a sample project that you can use as the starting point
 for your Fhenix project. It's also a great fit for learning the basics of
