@@ -11,7 +11,9 @@ task("task:addCount")
     const amountToAdd = Number(taskArguments.amount);
     const Counter = await deployments.get("Counter");
 
-    console.log(`Running addCount, targeting contract at: ${Counter.address}`);
+    console.log(
+      `Running addCount(${amountToAdd}), targeting contract at: ${Counter.address}`,
+    );
 
     const contract = await ethers.getContractAt("Counter", Counter.address);
 
