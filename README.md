@@ -1,4 +1,4 @@
-# Hardhat Boilerplate
+# Fhenix Hardhat Example
 
 This repository contains a sample project that you can use as the starting point
 for your Fhenix project. It's also a great fit for learning the basics of
