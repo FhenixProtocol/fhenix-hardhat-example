@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  fhenix-hardhat-plugin-root:
-    specifier: github:FhenixProtocol/fhenix-hardhat-plugin
-    version: github.com/FhenixProtocol/fhenix-hardhat-plugin/53e04fb25f2bf51ea2d7e6ea5531674694f81905
-
 devDependencies:
   '@ethersproject/abi':
     specifier: ^5.7.0
@@ -40,15 +35,21 @@ devDependencies:
   chai:
     specifier: ^4.4.1
     version: 4.4.1
+  cross-env:
+    specifier: ^7.0.3
+    version: 7.0.3
+  fhenix-hardhat-docker:
+    specifier: ^0.1.0-beta.8
+    version: 0.1.0-beta.8(hardhat@2.19.4)
+  fhenix-hardhat-plugin:
+    specifier: ^0.1.0-beta.8
+    version: 0.1.0-beta.8(hardhat@2.19.4)
   hardhat:
     specifier: ^2.19.4
     version: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
-  hardhat-fhenix:
-    specifier: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix
-    version: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix(hardhat@2.19.4)
-  hardhat-fhenix-docker:
-    specifier: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker
-    version: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker(hardhat@2.19.4)
+  hardhat-deploy:
+    specifier: ^0.11.45
+    version: 0.11.45
   hardhat-gas-reporter:
     specifier: ^1.0.9
     version: 1.0.9(hardhat@2.19.4)
@@ -1349,6 +1350,14 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
+  /axios@0.21.4(debug@4.3.4):
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.5(debug@4.3.4)
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /axios@1.6.5:
     resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
     dependencies:
@@ -1744,6 +1753,23 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
+  /cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
+
+  /cross-spawn@7.0.3:
+    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+    engines: {node: '>= 8'}
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+    dev: true
+
   /crypt@0.0.2:
     resolution: {integrity: sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==}
     dev: true
@@ -1852,6 +1878,10 @@ packages:
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
+    dev: true
+
+  /encode-utf8@1.0.3:
+    resolution: {integrity: sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==}
     dev: true
 
   /enquirer@2.4.1:
@@ -2087,7 +2117,6 @@ packages:
       is-hex-prefixed: 1.0.0
       strip-hex-prefix: 1.0.0
     dev: true
-    bundledDependencies: false
 
   /evp_bytestokey@1.0.3:
     resolution: {integrity: sha512-/f2Go4TognH/KvCISP7OUsHn85hT9nUkxxA9BEWxFn+Oj9o8ZNLm/40hdlgSLyuOimsrTKLUMEorQexp/aPQeA==}
@@ -2121,8 +2150,32 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fhenixjs@0.1.0-beta.4:
-    resolution: {integrity: sha512-jNn+x7Rwqo2epoHJTsQxPhd/Xmya/RBRLIeRNeEC0g3Pjg96/txRHGPCCFn4efmnJlxodm2fvskRgcapDL/6PA==}
+  /fhenix-hardhat-docker@0.1.0-beta.8(hardhat@2.19.4):
+    resolution: {integrity: sha512-/vcMbGA1Oix5a3Ii6PobTLZAjdO1RmN8P0JJFX/uOkEpV8jKJSFlIqx+si3yyETPh96joDErO6cRIyNBWM1Djg==}
+    requiresBuild: true
+    peerDependencies:
+      hardhat: ^2.0.0
+    dependencies:
+      chalk: 4.1.2
+      hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
+    dev: true
+
+  /fhenix-hardhat-plugin@0.1.0-beta.8(hardhat@2.19.4):
+    resolution: {integrity: sha512-ukq3dVtzqTkYZRy+RDRUbeKX034cQPDeDZq9MRyQgPKSKP48OJ4o1Iw5wtzl4TyI3dyqZmNkfcXJoK9OQ+lhYg==}
+    peerDependencies:
+      hardhat: ^2.0.0
+    dependencies:
+      axios: 1.6.5
+      fhenixjs: 0.1.0-beta.5
+      hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - utf-8-validate
+    dev: true
+
+  /fhenixjs@0.1.0-beta.5:
+    resolution: {integrity: sha512-Bp++KetxeckF+dOwCQwsN76JeYJ+2nZuV2n+AAdQrE+N0C/FlEFx45Y4omlKEea1F6ASWmPfA4CHVPUgkAIRRg==}
     dependencies:
       ethers: 6.10.0
       node-tfhe: 0.3.1
@@ -2168,6 +2221,12 @@ packages:
     hasBin: true
     dev: true
 
+  /fmix@0.1.0:
+    resolution: {integrity: sha512-Y6hyofImk9JdzU8k5INtTXX1cu8LDlePWDFU5sftm9H+zKCr5SGrVjdhkvsim646cw5zD0nADj8oHyXMZmCZ9w==}
+    dependencies:
+      imul: 1.0.1
+    dev: true
+
   /follow-redirects@1.15.5(debug@4.3.4):
     resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
@@ -2210,6 +2269,15 @@ packages:
       klaw: 1.3.1
       path-is-absolute: 1.0.1
       rimraf: 2.7.1
+    dev: true
+
+  /fs-extra@10.1.0:
+    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
     dev: true
 
   /fs-extra@7.0.1:
@@ -2396,6 +2464,39 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.17.4
+    dev: true
+
+  /hardhat-deploy@0.11.45:
+    resolution: {integrity: sha512-aC8UNaq3JcORnEUIwV945iJuvBwi65tjHVDU3v6mOcqik7WAzHVCJ7cwmkkipsHrWysrB5YvGF1q9S1vIph83w==}
+    dependencies:
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/abstract-signer': 5.7.0
+      '@ethersproject/address': 5.7.0
+      '@ethersproject/bignumber': 5.7.0
+      '@ethersproject/bytes': 5.7.0
+      '@ethersproject/constants': 5.7.0
+      '@ethersproject/contracts': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@ethersproject/solidity': 5.7.0
+      '@ethersproject/transactions': 5.7.0
+      '@ethersproject/wallet': 5.7.0
+      '@types/qs': 6.9.11
+      axios: 0.21.4(debug@4.3.4)
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      debug: 4.3.4(supports-color@8.1.1)
+      enquirer: 2.4.1
+      ethers: 5.7.2
+      form-data: 4.0.0
+      fs-extra: 10.1.0
+      match-all: 1.2.6
+      murmur-128: 0.2.1
+      qs: 6.11.2
+      zksync-web3: 0.14.4(ethers@5.7.2)
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /hardhat-gas-reporter@1.0.9(hardhat@2.19.4):
@@ -2608,6 +2709,11 @@ packages:
 
   /immutable@4.3.4:
     resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
+    dev: true
+
+  /imul@1.0.1:
+    resolution: {integrity: sha512-WFAgfwPLAjU66EKt6vRdTlKj4nAgIDQzh29JonLa4Bqtl6D8JrIMvWjCnx7xEjVNmP3U0fM5o8ZObk7d0f62bA==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /indent-string@4.0.0:
@@ -2876,6 +2982,10 @@ packages:
     resolution: {integrity: sha512-1RUZVgQlpJSPWYbFSpmudq5nHY1doEIv89gBtF0s4gW1GF2XorxcA/70M5vq7rLv0a6mhOUccRsqkwhwLCIQ2Q==}
     dev: true
 
+  /match-all@1.2.6:
+    resolution: {integrity: sha512-0EESkXiTkWzrQQntBu2uzKvLu6vVkUGz40nGPbSZuegcfE5UuSzNjLaIu76zJWuaT/2I3Z/8M06OlUOZLGwLlQ==}
+    dev: true
+
   /mcl-wasm@0.7.9:
     resolution: {integrity: sha512-iJIUcQWA88IJB/5L15GnJVnSQJmf/YaxxV6zRavv83HILHaJQb6y0iFyDMdDO0gN8X37tdxmAOrH/P8B6RB8sQ==}
     engines: {node: '>=8.9.0'}
@@ -3015,6 +3125,14 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+    dev: true
+
+  /murmur-128@0.2.1:
+    resolution: {integrity: sha512-WseEgiRkI6aMFBbj8Cg9yBj/y+OdipwVC7zUo3W2W1JAJITwouUOtpqsmGSg67EQmwwSyod7hsVsWY5LsrfQVg==}
+    dependencies:
+      encode-utf8: 1.0.3
+      fmix: 0.1.0
+      imul: 1.0.1
     dev: true
 
   /nanoid@3.3.3:
@@ -3172,6 +3290,11 @@ packages:
   /path-is-absolute@1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /path-key@3.1.1:
+    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
+    engines: {node: '>=8'}
     dev: true
 
   /path-parse@1.0.7:
@@ -3504,6 +3627,18 @@ packages:
     dependencies:
       charenc: 0.0.2
       crypt: 0.0.2
+    dev: true
+
+  /shebang-command@2.0.0:
+    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
+    engines: {node: '>=8'}
+    dependencies:
+      shebang-regex: 3.0.0
+    dev: true
+
+  /shebang-regex@3.0.0:
+    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
+    engines: {node: '>=8'}
     dev: true
 
   /shelljs@0.8.5:
@@ -4002,6 +4137,14 @@ packages:
       isexe: 2.0.0
     dev: true
 
+  /which@2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
+    engines: {node: '>= 8'}
+    hasBin: true
+    dependencies:
+      isexe: 2.0.0
+    dev: true
+
   /word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
@@ -4126,37 +4269,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  file:../fhenix-hardhat-plugin/packages/hardhat-fhenix(hardhat@2.19.4):
-    resolution: {directory: ../fhenix-hardhat-plugin/packages/hardhat-fhenix, type: directory}
-    id: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix
-    name: hardhat-fhenix
+  /zksync-web3@0.14.4(ethers@5.7.2):
+    resolution: {integrity: sha512-kYehMD/S6Uhe1g434UnaMN+sBr9nQm23Ywn0EUP5BfQCsbjcr3ORuS68PosZw8xUTu3pac7G6YMSnNHk+fwzvg==}
+    deprecated: This package has been deprecated in favor of zksync-ethers@5.0.0
     peerDependencies:
-      hardhat: ^2.0.0
+      ethers: ^5.7.0
     dependencies:
-      axios: 1.6.5
-      fhenixjs: 0.1.0-beta.4
-      hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
-    transitivePeerDependencies:
-      - bufferutil
-      - debug
-      - utf-8-validate
+      ethers: 5.7.2
     dev: true
-
-  file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker(hardhat@2.19.4):
-    resolution: {directory: ../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker, type: directory}
-    id: file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker
-    name: '@fhenixprotocol/fhenix-hardhat-docker'
-    requiresBuild: true
-    peerDependencies:
-      hardhat: ^2.0.0
-    dependencies:
-      chalk: 4.1.2
-      hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
-    dev: true
-
-  github.com/FhenixProtocol/fhenix-hardhat-plugin/53e04fb25f2bf51ea2d7e6ea5531674694f81905:
-    resolution: {tarball: https://codeload.github.com/FhenixProtocol/fhenix-hardhat-plugin/tar.gz/53e04fb25f2bf51ea2d7e6ea5531674694f81905}
-    name: fhenix-hardhat-plugin-root
-    version: 1.0.0
-    requiresBuild: true
-    dev: false

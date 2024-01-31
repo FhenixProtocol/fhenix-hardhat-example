@@ -1,15 +1,15 @@
 {
   "name": "fhenix-hardhat-example",
   "version": "1.0.0",
-  "description": "A boilerplate repository to get you started with Hardhat and Ethereum development",
+  "description": "An example repository to get you started with Fhenix development",
   "scripts": {
     "test": "hardhat test",
     "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
     "task:deploy": "hardhat deploy",
     "task:addCount": "hardhat task:addCount",
     "task:getCount": "hardhat task:getCount",
-    "fhenix:start": "hardhat localfhenix:start",
-    "fhenix:stop": "hardhat localfhenix:stop"
+    "localfhenix:start": "hardhat localfhenix:start",
+    "localfhenix:stop": "hardhat localfhenix:stop"
   },
   "repository": {
     "type": "git",
@@ -32,13 +32,12 @@
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/contracts": "^5.0.1",
     "chai": "^4.4.1",
+    "cross-env": "^7.0.3",
     "hardhat": "^2.19.4",
-    "hardhat-fhenix": "file:../fhenix-hardhat-plugin/packages/hardhat-fhenix",
-    "hardhat-fhenix-docker": "file:../fhenix-hardhat-plugin/packages/hardhat-fhenix-docker",
+    "hardhat-deploy": "^0.11.45",
+    "fhenix-hardhat-plugin": "^0.1.0-beta.8",
+    "fhenix-hardhat-docker": "^0.1.0-beta.8",
     "hardhat-gas-reporter": "^1.0.9",
     "solidity-coverage": "^0.8.2"
-  },
-  "dependencies": {
-    "fhenix-hardhat-plugin-root": "github:FhenixProtocol/fhenix-hardhat-plugin"
   }
 }

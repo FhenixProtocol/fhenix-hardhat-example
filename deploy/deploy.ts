@@ -6,7 +6,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deploy } = hre.deployments;
   const [signer] = await ethers.getSigners();
 
-  await fhenixjs.utils.getFunds(signer.address);
+  await fhenixjs.getFunds(signer.address);
 
   const counter = await deploy("Counter", {
     from: signer.address,
