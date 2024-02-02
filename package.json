@@ -24,20 +24,19 @@
   "devDependencies": {
     "@ethersproject/abi": "^5.7.0",
     "@ethersproject/providers": "^5.7.2",
-    "@fhenixprotocol/contracts": "^0.1.0-beta.3",
+    "@fhenixprotocol/contracts": "0.1.0-beta.3",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/contracts": "^5.0.1",
     "chai": "^4.4.1",
     "cross-env": "^7.0.3",
-    "hardhat": "^2.19.4",
+    "fhenix-hardhat-docker": "0.1.0-beta.11",
+    "fhenix-hardhat-plugin": "0.1.0-beta.11",
+    "hardhat": "^2.19.5",
     "hardhat-deploy": "^0.11.45",
-    "fhenix-hardhat-plugin": "^0.1.0-beta.8",
-    "fhenix-hardhat-docker": "^0.1.0-beta.8",
-    "hardhat-gas-reporter": "^1.0.9",
-    "solidity-coverage": "^0.8.2"
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.6"
   }
 }
