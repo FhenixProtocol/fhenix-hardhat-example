@@ -26,9 +26,6 @@ devDependencies:
   '@nomiclabs/hardhat-ethers':
     specifier: ^2.2.3
     version: 2.2.3(ethers@5.7.2)(hardhat@2.19.5)
-  '@nomiclabs/hardhat-etherscan':
-    specifier: ^3.1.8
-    version: 3.1.8(hardhat@2.19.5)
   '@openzeppelin/contracts':
     specifier: ^5.0.1
     version: 5.0.1
@@ -39,11 +36,11 @@ devDependencies:
     specifier: ^7.0.3
     version: 7.0.3
   fhenix-hardhat-docker:
-    specifier: 0.1.0-beta.11
-    version: 0.1.0-beta.11(hardhat@2.19.5)
+    specifier: 0.1.0-beta.15
+    version: 0.1.0-beta.15(hardhat@2.19.5)
   fhenix-hardhat-plugin:
-    specifier: 0.1.0-beta.11
-    version: 0.1.0-beta.11(hardhat@2.19.5)
+    specifier: 0.1.0-beta.15
+    version: 0.1.0-beta.15(hardhat@2.19.5)
   hardhat:
     specifier: ^2.19.5
     version: 2.19.5(ts-node@10.9.2)(typescript@5.3.3)
@@ -2173,8 +2170,8 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fhenix-hardhat-docker@0.1.0-beta.11(hardhat@2.19.5):
-    resolution: {integrity: sha512-HMZgFwzwxudEmoiLGAVehHpjdGIPGDmz2sruzF9T28AyGMenKkh0NtpH2aoFThft80u0ThpCH8GJ7KGwX5yVWg==}
+  /fhenix-hardhat-docker@0.1.0-beta.15(hardhat@2.19.5):
+    resolution: {integrity: sha512-RLHi/LUhTO8KEmKrRN17mI8y7NI10c8DmOcwv4Ztkk0p4onVXFKoTYv0QnWEoqMfAoA6+jZ7oNK6/2zvV6avkw==}
     peerDependencies:
       hardhat: ^2.0.0
     dependencies:
@@ -2182,8 +2179,8 @@ packages:
       hardhat: 2.19.5(ts-node@10.9.2)(typescript@5.3.3)
     dev: true
 
-  /fhenix-hardhat-plugin@0.1.0-beta.11(hardhat@2.19.5):
-    resolution: {integrity: sha512-TGKGb+gjexrhcdA0akjyNYiDaZ9SBwzHjaoCo60XoctSVkU5IDqG9ht6EB4frOteFaeQ3iqISfO1mQveQOYwtA==}
+  /fhenix-hardhat-plugin@0.1.0-beta.15(hardhat@2.19.5):
+    resolution: {integrity: sha512-9wLA9l3BQzJsuhxNlXMvjEn5kGGSk6nWBr4eX3t07eZaL0qctIDRk+bq4INSWZ1NMq2rmEwIsjA1lczSzAXMRg==}
     peerDependencies:
       hardhat: ^2.0.0
     dependencies:
