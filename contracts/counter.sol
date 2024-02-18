@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.20 <0.9.0;
+pragma solidity >=0.8.13 <0.9.0;
 
 import "@fhenixprotocol/contracts/FHE.sol";
 import {Permissioned, Permission} from "@fhenixprotocol/contracts/access/Permissioned.sol";
@@ -13,7 +13,7 @@ contract Counter is Permissioned {
     owner = msg.sender;
   }
 
-  function add(bytes calldata encryptedValue) public {
+  function add(inEuint32 calldata encryptedValue) public {
     euint32 value = FHE.asEuint32(encryptedValue);
     counter = counter + value;
   }

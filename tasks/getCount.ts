@@ -1,6 +1,6 @@
+import { Counter } from "../types";
 import { task } from "hardhat/config";
 import type { TaskArguments } from "hardhat/types";
-import { Counter } from "../typechain-types";
 
 task("task:getCount").setAction(async function (
   _taskArguments: TaskArguments,

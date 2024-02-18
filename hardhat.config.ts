@@ -1,8 +1,10 @@
 // Plugins
+// Tasks
+import "./tasks";
 import "@nomicfoundation/hardhat-toolbox";
 import "dotenv/config";
-import "fhenix-hardhat-plugin";
 import "fhenix-hardhat-docker";
+import "fhenix-hardhat-plugin";
 import "hardhat-deploy";
 import { HardhatUserConfig } from "hardhat/config";
 
@@ -12,9 +14,6 @@ if (!keys) {
   throw new Error("Please set your MNEMONIC in a .env file");
 }
 const accounts: string[] = [keys];
-
-// Tasks
-import "./tasks";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.20",
