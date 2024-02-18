@@ -1,8 +1,25 @@
-node_modules
-.idea
 
-#Hardhat files
+
+# directories
+.coverage_artifacts
+.coverage_cache
+.coverage_contracts
+build
+coverage
+dist
+node_modules
+types
+deployments
 cache
 artifacts
 typechain-types
-deployments
+
+# files
+*.env
+*.log
+.DS_Store
+.pnp.*
+.idea
+coverage.json
+package-lock.json
+yarn.lock

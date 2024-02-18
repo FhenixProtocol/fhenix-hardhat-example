@@ -9,7 +9,8 @@
     "task:addCount": "hardhat task:addCount",
     "task:getCount": "hardhat task:getCount",
     "localfhenix:start": "hardhat localfhenix:start",
-    "localfhenix:stop": "hardhat localfhenix:stop"
+    "localfhenix:stop": "hardhat localfhenix:stop",
+    "faucet": "node getFromFaucet.js"
   },
   "repository": {
     "type": "git",
@@ -29,14 +30,27 @@
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/contracts": "^5.0.1",
+    "@typechain/ethers-v5": "^10.2.1",
+    "@types/mocha": "^10.0.6",
     "chai": "^4.4.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.4",
+    "ethers": "^6.4.0",
     "fhenix-hardhat-docker": "0.1.0-beta.15",
     "fhenix-hardhat-plugin": "0.1.0-beta.15",
     "hardhat": "^2.19.5",
     "hardhat-deploy": "^0.11.45",
     "hardhat-gas-reporter": "^1.0.10",
-    "solidity-coverage": "^0.8.6"
+    "solidity-coverage": "^0.8.6",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.2.0",
+    "typescript": "^5.3.3",
+    "zksync-web3": "^0.17.1"
+  },
+  "dependencies": {
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0"
   }
 }
