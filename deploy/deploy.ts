@@ -1,12 +1,16 @@
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
-const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const hre = require("hardhat");
+
+const func: DeployFunction = async function () {
   const { fhenixjs, ethers } = hre;
   const { deploy } = hre.deployments;
   const [signer] = await ethers.getSigners();
 
-  await fhenixjs.getFunds(signer.address);
+  if ((await ethers.provider.getBalance(signer.address)).toString() === "0") {
+    await fhenixjs.getFunds(signer.address);
+  }
 
   const counter = await deploy("Counter", {
     from: signer.address,
@@ -15,7 +19,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     skipIfAlreadyDeployed: false,
   });
 
-  console.log(`Counter contjract: `, counter.address);
+  console.log(`Counter contract: `, counter.address);
 };
 
 export default func;
