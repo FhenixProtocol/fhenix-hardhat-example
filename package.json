@@ -9,6 +9,7 @@
     "task:deploy": "hardhat deploy",
     "task:addCount": "hardhat task:addCount",
     "task:getCount": "hardhat task:getCount",
+    "task:getFunds": "hardhat task:getFunds",
     "localfhenix:start": "hardhat localfhenix:start",
     "localfhenix:stop": "hardhat localfhenix:stop",
     "faucet": "node getFromFaucet.js"
