@@ -5,25 +5,25 @@
   "scripts": {
     "test": "hardhat test",
     "clean": "rimraf ./artifacts ./cache ./coverage ./types ./coverage.json ./deployments/localfhenix",
-    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
+    "compile": "hardhat compile",
     "task:deploy": "hardhat deploy",
     "task:addCount": "hardhat task:addCount",
     "task:getCount": "hardhat task:getCount",
     "task:getFunds": "hardhat task:getFunds",
     "localfhenix:start": "hardhat localfhenix:start",
     "localfhenix:stop": "hardhat localfhenix:stop",
-    "faucet": "node getFromFaucet.js"
+    "faucet": "hardhat task:fhenix:usefaucet"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NomicFoundation/hardhat-boilerplate.git"
+    "url": "git+https://github.com/fhenixprotocol/fhenix-hardhat-example.git"
   },
-  "author": "Nomic Foundation",
+  "author": "Fhenix",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NomicFoundation/hardhat-boilerplate/issues"
+    "url": "https://github.com/fhenixprotocol/fhenix-hardhat-example/issues"
   },
-  "homepage": "https://github.com/NomicFoundation/hardhat-boilerplate#readme",
+  "homepage": "https://github.com/fhenixprotocol/fhenix-hardhat-example#readme",
   "devDependencies": {
     "@fhenixprotocol/contracts": "^0.1.0-beta.3",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
@@ -38,14 +38,13 @@
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.11.19",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
     "axios": "^1.6.7",
     "chai": "^4.3.7",
+    "chalk": "^4.1.2",
     "dotenv": "^16.4.5",
     "ethers": "^6.11.1",
-    "fhenix-hardhat-docker": "^0.1.0-beta.15",
-    "fhenix-hardhat-plugin": "^0.1.0-beta.15",
+    "fhenix-hardhat-docker": "^0.1.1",
+    "fhenix-hardhat-plugin": "^0.1.1",
     "hardhat": "^2.20.1",
     "hardhat-deploy": "^0.11.45",
     "hardhat-gas-reporter": "^1.0.10",

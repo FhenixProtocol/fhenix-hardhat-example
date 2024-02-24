@@ -2,7 +2,6 @@ import { createFheInstance } from "../../utils/instance";
 import type { Signers } from "../types";
 import { shouldBehaveLikeCounter } from "./Counter.behavior";
 import { deployCounterFixture, getTokensFromFaucet } from "./Counter.fixture";
-import { expect } from "chai";
 import hre from "hardhat";
 
 describe("Unit tests", function () {
@@ -24,26 +23,6 @@ describe("Unit tests", function () {
   });
 
   describe("Counter", function () {
-    it("should add amount to the counter and verify the result", async function () {
-      const amountToCount = 10;
-
-      const eAmountCount = await this.instance.instance.encrypt_uint32(
-        amountToCount,
-      );
-      await this.counter.add(eAmountCount);
-
-      // await waitForBlock(hre);
-
-      const eAmount = await this.counter
-        .connect(this.signers.admin)
-        .getCounterPermitSealed(this.instance.permission);
-      const amount = this.instance.instance.unseal(
-        await this.counter.getAddress(),
-        eAmount,
-      );
-      console.log(amount);
-
-      expect(amount).to.equal(amountToCount);
-    });
+    shouldBehaveLikeCounter();
   });
 });
