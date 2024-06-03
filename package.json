@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/fhenixprotocol/fhenix-hardhat-example#readme",
   "devDependencies": {
-    "@fhenixprotocol/contracts": "^0.1.0-beta.3",
+    "@fhenixprotocol/contracts": "0.2.0-beta.10",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
@@ -43,8 +43,8 @@
     "chalk": "^4.1.2",
     "dotenv": "^16.4.5",
     "ethers": "^6.11.1",
-    "fhenix-hardhat-docker": "^0.1.1",
-    "fhenix-hardhat-plugin": "^0.1.1",
+    "fhenix-hardhat-docker": "0.2.0-beta.0",
+    "fhenix-hardhat-plugin": "0.2.0-beta.0",
     "hardhat": "^2.20.1",
     "hardhat-deploy": "^0.11.45",
     "hardhat-gas-reporter": "^1.0.10",
@@ -56,6 +56,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "fhenixjs": "^0.1.0-beta.6"
+    "fhenixjs": "0.2.0-beta.4"
   }
 }

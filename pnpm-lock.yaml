@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -6,13 +6,13 @@ settings:
 
 dependencies:
   fhenixjs:
-    specifier: ^0.1.0-beta.6
-    version: 0.1.0-beta.6
+    specifier: 0.2.0-beta.4
+    version: 0.2.0-beta.4
 
 devDependencies:
   '@fhenixprotocol/contracts':
-    specifier: ^0.1.0-beta.3
-    version: 0.1.0-beta.3
+    specifier: 0.2.0-beta.10
+    version: 0.2.0-beta.10
   '@nomicfoundation/hardhat-chai-matchers':
     specifier: ^2.0.6
     version: 2.0.6(@nomicfoundation/hardhat-ethers@3.0.5)(chai@4.4.1)(ethers@6.11.1)(hardhat@2.20.1)
@@ -65,11 +65,11 @@ devDependencies:
     specifier: ^6.11.1
     version: 6.11.1
   fhenix-hardhat-docker:
-    specifier: ^0.1.1
-    version: 0.1.1(hardhat@2.20.1)
+    specifier: 0.2.0-beta.0
+    version: 0.2.0-beta.0(hardhat@2.20.1)
   fhenix-hardhat-plugin:
-    specifier: ^0.1.1
-    version: 0.1.1(hardhat@2.20.1)
+    specifier: 0.2.0-beta.0
+    version: 0.2.0-beta.0(hardhat@2.20.1)
   hardhat:
     specifier: ^2.20.1
     version: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
@@ -445,8 +445,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fhenixprotocol/contracts@0.1.0-beta.3:
-    resolution: {integrity: sha512-d7gFgTPX++VfMs450CM1gR0tCRhs7FyWU1tgf3i+wJWwLmtjMM+6pKM67+xHoRbMq7TuGRzAEZEurk3rpIfkJg==}
+  /@fhenixprotocol/contracts@0.2.0-beta.10:
+    resolution: {integrity: sha512-wJu5ITH9ssssP+pzcDwSVDEt3T/OMuG7yyerW7vGp2ZM8gA6QHD+Rks+evzXoDiGxn4eZyw9acX0Qq3Id6g5yg==}
     dependencies:
       '@openzeppelin/contracts': 5.0.1
     dev: true
@@ -2164,8 +2164,8 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fhenix-hardhat-docker@0.1.1(hardhat@2.20.1):
-    resolution: {integrity: sha512-8HrEsacFczTLcxXLFy92pT3MY0ayA2RWcqmoatW84APbPRFh6QWt3dS1XMNT4ZlC25BpI2V7royVKDEp0rjUFg==}
+  /fhenix-hardhat-docker@0.2.0-beta.0(hardhat@2.20.1):
+    resolution: {integrity: sha512-xStXzHP0WbxD430RCGHWXhrw2RRHFJ6/SLaoTI8dBwXwI0q/DMj2KOie4hEM7btBoQYAlErKto7WkqQHUx8GrQ==}
     peerDependencies:
       hardhat: ^2.0.0
     dependencies:
@@ -2173,15 +2173,15 @@ packages:
       hardhat: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
     dev: true
 
-  /fhenix-hardhat-plugin@0.1.1(hardhat@2.20.1):
-    resolution: {integrity: sha512-GPO065XGH291YOgMJ9ZG0WbSMWfbFk9aZMHERLHf7Qd0qom80XEDYFjSTYbA8diG/hHe5Nz9V9BUpcCbVR7Amg==}
+  /fhenix-hardhat-plugin@0.2.0-beta.0(hardhat@2.20.1):
+    resolution: {integrity: sha512-or9AzVMIA3qyMU3XLQSy7VMTc4fYjQuHa0ioy0OK7Oe5ahI23JVqpp72juci5R87UmH0H032qdRnQwLHmw2NEQ==}
     peerDependencies:
       hardhat: ^2.0.0
     dependencies:
       axios: 1.6.7
       chalk: 4.1.2
       ethers: 6.11.1
-      fhenixjs: 0.1.0-beta.5
+      fhenixjs: 0.2.0-beta.4
       hardhat: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
     transitivePeerDependencies:
       - bufferutil
@@ -2189,31 +2189,17 @@ packages:
       - utf-8-validate
     dev: true
 
-  /fhenixjs@0.1.0-beta.5:
-    resolution: {integrity: sha512-Bp++KetxeckF+dOwCQwsN76JeYJ+2nZuV2n+AAdQrE+N0C/FlEFx45Y4omlKEea1F6ASWmPfA4CHVPUgkAIRRg==}
+  /fhenixjs@0.2.0-beta.4:
+    resolution: {integrity: sha512-N+PgOWI19sBzJO0S6CzS4k7iDq7pmQx1DncZTsIN5AqsYBUt1Toakd8WAnvhoLXQlWi7BOnXHTo7UHVIayQA4Q==}
     dependencies:
       ethers: 6.11.1
-      node-tfhe: 0.3.1
-      tfhe: 0.3.1
+      node-tfhe: 0.6.1
+      tfhe: 0.6.1
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-    dev: true
-
-  /fhenixjs@0.1.0-beta.6:
-    resolution: {integrity: sha512-82Q6WiICT5YcU4+UoEZkKNxoyY/2neFbPvJA4VTRXmG4yAPTv5Z5xs365NienVnLT6BwGmLR0ddJPi6++KYiMQ==}
-    dependencies:
-      ethers: 6.11.1
-      node-tfhe: 0.3.1
-      tfhe: 0.3.1
-      tweetnacl: 1.0.3
-      tweetnacl-util: 0.15.1
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -3190,8 +3176,8 @@ packages:
     hasBin: true
     dev: true
 
-  /node-tfhe@0.3.1:
-    resolution: {integrity: sha512-re5tBgPMwoSWl6b/pL13MWKnsBUv9nldAXoWkokG1aiUm9P0aOjJoz0J9+zOwV/dB0i9xN/TI//mnqF3uWAOIg==}
+  /node-tfhe@0.6.1:
+    resolution: {integrity: sha512-p2BidmylEO+3v1Q4KqErNJC8z/Y2R+b+Yd42omweeII41AbgPM12RJCmvE9GMvr/ZbAn/H762JPijLH08oBUYQ==}
 
   /nofilter@3.1.0:
     resolution: {integrity: sha512-l2NNj07e9afPnhAhvgVrCD/oy2Ai1yfLpuo3EpiO1jFTsB4sFz6oIfAfSZyQzVpkZQ9xS8ZS5g1jCBgq4Hwo0g==}
@@ -3946,8 +3932,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tfhe@0.3.1:
-    resolution: {integrity: sha512-PqnsUVChETviwd5ebfJoj9yueUxIKPaSsfSGVmgvpUsUqAlianAx+4UH9hEmjDxgshSRDgm1Fp0/rRgCx2BYog==}
+  /tfhe@0.6.1:
+    resolution: {integrity: sha512-csHYfEbejbQl4LVb1/37LY9AxiR9RqvzXsHT1wENMtGqIjNmev3T1aXyljooGc/4HuZmG8VjlUkX6CYvG4U80g==}
 
   /then-request@6.0.2:
     resolution: {integrity: sha512-3ZBiG7JvP3wbDzA9iNY5zJQcHL4jn/0BWtXIkagfz7QgOL/LqjCEOBQuJNZfu0XYnv5JhKh+cDxCPM4ILrqruA==}
