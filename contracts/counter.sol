@@ -30,7 +30,7 @@ contract Counter is Permissioned {
 
   function getCounterPermitSealed(
     Permission memory permission
-  ) public view onlySender(permission) returns (bytes memory) {
+  ) public view onlySender(permission) returns (string memory) {
     return FHE.sealoutput(counter, permission.publicKey);
   }
 }
