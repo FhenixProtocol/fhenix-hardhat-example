@@ -12,6 +12,14 @@ on:
 
 jobs:
   test:
+    services:
+      # Label used to access the service container
+      localfhenix:
+        options: --name localfhenix
+        image: ghcr.io/fhenixprotocol/localfhenix:v0.2.3-rc.2
+        ports:
+          - 42000:3000
+          - 42069:8547
     runs-on: "ubuntu-latest"
     steps:
       - name: "Check out the repo"
@@ -31,11 +39,11 @@ jobs:
       - name: "Install the dependencies"
         run: "pnpm install"
 
-      - name: "Run LocalFhenix"
-        run: "pnpm localfhenix:start"
-
       - name: "Compile the contracts and generate the TypeChain bindings"
         run: "pnpm typechain"
+
+      - name: "Make Money"
+        run: "pnpm faucet"
 
       - name: "Test the contracts"
         run: "pnpm test"
