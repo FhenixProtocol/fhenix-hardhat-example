@@ -27,7 +27,13 @@ cd fhenix-hardhat-example
 pnpm install
 ```
 
-Once installed, let's run a LocalFhenix instance:
+Next, you need an .env file containing your mnemonics or keys. You can use .env.example that comes with a predefined mnemonic, or use your own
+
+```sh
+cp .env.example .env
+```
+
+Once the file exists, let's run a LocalFhenix instance:
 
 ```sh
 pnpm localfhenix:start
@@ -55,7 +61,9 @@ pnpm task:addCount --amount 5
 pnpm task:getCount # => 6
 ```
 
-TODO: frontend
+## Troubleshooting
+
+If Localfhenix doesn't start this could indicate an error with docker. Please verify that docker is running correctly using the `docker run hello-world` command, which should run a basic container and verify that everything is plugged in.
 
 ## More Info
 
