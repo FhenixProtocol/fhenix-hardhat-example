@@ -65,6 +65,8 @@ pnpm task:getCount # => 6
 
 If Localfhenix doesn't start this could indicate an error with docker. Please verify that docker is running correctly using the `docker run hello-world` command, which should run a basic container and verify that everything is plugged in.
 
+For example, if the docker service is installed but not running, it might indicate you need to need to start it manually.
+
 ## More Info
 
 To learn more about the Fhenix Hardhat plugin, check out the [Fhenix Hardhat Plugin Repository](https://github.com/FhenixProtocol/fhenix-hardhat-plugin).
