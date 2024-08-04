@@ -13,8 +13,8 @@ import {resolve} from "path";
 const dotenvConfigPath: string = process.env.DOTENV_CONFIG_PATH || "./.env";
 dotenvConfig({ path: resolve(__dirname, dotenvConfigPath) });
 
-const TESTNET_CHAIN_ID = 42069;
-const TESTNET_RPC_URL = "https://api.testnet.fhenix.zone:7747";
+const TESTNET_CHAIN_ID = 8008135;
+const TESTNET_RPC_URL = "https://api.helium.fhenix.zone";
 
 const testnetConfig = {
     chainId: TESTNET_CHAIN_ID,
