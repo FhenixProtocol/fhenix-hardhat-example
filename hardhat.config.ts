@@ -5,6 +5,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import {config as dotenvConfig} from "dotenv";
 import "fhenix-hardhat-docker";
 import "fhenix-hardhat-plugin";
+import "fhenix-hardhat-network";
 import "hardhat-deploy";
 import {HardhatUserConfig} from "hardhat/config";
 import {resolve} from "path";
@@ -20,7 +21,6 @@ const testnetConfig = {
     chainId: TESTNET_CHAIN_ID,
     url: TESTNET_RPC_URL,
 }
-
 
 // Select either private keys or mnemonic from .env file or environment variables
 const keys = process.env.KEY;
@@ -41,7 +41,6 @@ if (!keys) {
 
 const config: HardhatUserConfig = {
   solidity: "0.8.25",
-  // Optional: defaultNetwork is already being set to "localfhenix" by fhenix-hardhat-plugin
   defaultNetwork: "hardhat",
   networks: {
     testnet: testnetConfig,
