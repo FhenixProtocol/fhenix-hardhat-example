@@ -4,6 +4,7 @@
   "description": "An example repository to get you started with Fhenix development",
   "scripts": {
     "test": "hardhat test",
+    "test:localfhenix": "hardhat test --network localfhenix",
     "clean": "rimraf ./artifacts ./cache ./coverage ./types ./coverage.json ./deployments/localfhenix",
     "compile": "hardhat compile",
     "task:deploy": "hardhat deploy",
