@@ -1,4 +1,4 @@
-import { createFheInstance } from "../../utils/instance";
+import { createPermitForContract } from "../../utils/instance";
 import type { Signers } from "../types";
 import { shouldBehaveLikeCounter } from "./Counter.behavior";
 import { deployCounterFixture, getTokensFromFaucet } from "./Counter.fixture";
@@ -10,12 +10,13 @@ describe("Unit tests", function () {
 
     // get tokens from faucet if we're on localfhenix and don't have a balance
     await getTokensFromFaucet();
-    // deploy test contract
+
     const { counter, address } = await deployCounterFixture();
     this.counter = counter;
 
     // initiate fhenixjs
-    this.instance = await createFheInstance(hre, address);
+    this.permission = await createPermitForContract(hre, address);
+    this.fhenixjs = hre.fhenixjs;
 
     // set admin account/signer
     const signers = await hre.ethers.getSigners();
