@@ -28,7 +28,7 @@ jobs:
       - name: "Install Pnpm"
         uses: "pnpm/action-setup@v3"
         with:
-          version: "8"
+          version: "9"
 
       - name: "Install Node.js"
         uses: "actions/setup-node@v4"
@@ -45,8 +45,11 @@ jobs:
       - name: "Make Money"
         run: "pnpm faucet"
 
-      - name: "Test the contracts"
+      - name: "Test the contracts using Hardhat Network"
         run: "pnpm test"
+
+      - name: "Test the contract using LocalFhenix"
+        run: "pnpm test:localfhenix"
 
       - name: "Add test summary"
         run: |
