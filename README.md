@@ -61,6 +61,12 @@ pnpm task:addCount --amount 5
 pnpm task:getCount # => 6
 ```
 
+## Hardhat Network
+
+This template contains experimental support for testing using Hardhat Network. By importing the `fhenix-hardhat-network` plugin in `hardhat.config.ts` we add support for simulated operations using Hardhat Network. These do not perform the full FHE computations, and are menant to serve as development tools to verify contract logic.
+
+If you have any issues or feature requests regarding this support please open a ticket in this repository 
+
 ## Troubleshooting
 
 If Localfhenix doesn't start this could indicate an error with docker. Please verify that docker is running correctly using the `docker run hello-world` command, which should run a basic container and verify that everything is plugged in.
