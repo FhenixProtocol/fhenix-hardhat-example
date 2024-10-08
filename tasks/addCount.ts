@@ -21,14 +21,12 @@ task("task:addCount")
 
     const contract = await ethers.getContractAt("Counter", Counter.address);
 
-    const encyrptedAmount = await fhenixjs.encrypt_uint32(amountToAdd);
+    const encryptedAmount = await fhenixjs.encrypt_uint32(amountToAdd);
 
     let contractWithSigner = contract.connect(signer) as unknown as Counter;
 
     try {
-      // add() gets `bytes calldata encryptedValue`
-      // therefore we need to pass in the `data` property
-      await contractWithSigner.add(encyrptedAmount);
+      await contractWithSigner.add(encryptedAmount);
     } catch (e) {
       console.log(`Failed to send add transaction: ${e}`);
       return;
