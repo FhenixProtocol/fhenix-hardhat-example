@@ -1,6 +1,6 @@
 {
   "name": "fhenix-hardhat-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An example repository to get you started with Fhenix development",
   "scripts": {
     "test": "hardhat test",
