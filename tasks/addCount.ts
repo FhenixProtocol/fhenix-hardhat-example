@@ -1,6 +1,7 @@
-import { Counter } from "../types";
+import { Counter } from "../typechain-types";
 import { task } from "hardhat/config";
 import type { TaskArguments } from "hardhat/types";
+import {Deployment} from "hardhat-deploy/dist/types";
 
 task("task:addCount")
   .addParam("amount", "Amount to add to the counter (plaintext number)", "1")
@@ -13,7 +14,16 @@ task("task:addCount")
     }
 
     const amountToAdd = Number(taskArguments.amount);
-    const Counter = await deployments.get("Counter");
+    let Counter: Deployment;
+    try {
+      Counter = await deployments.get("Counter");
+    } catch (e) {
+      console.log(`${e}`);
+      if (hre.network.name === "hardhat") {
+        console.log("You're running on Hardhat network, did you forget to use --write on the deploy task?")
+      }
+      return;
+    }
 
     console.log(
       `Running addCount(${amountToAdd}), targeting contract at: ${Counter.address}`,
