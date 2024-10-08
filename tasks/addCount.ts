@@ -20,7 +20,7 @@ task("task:addCount")
     } catch (e) {
       console.log(`${e}`);
       if (hre.network.name === "hardhat") {
-        console.log("You're running on Hardhat network, Did you forget to use --write on the deploy task?")
+        console.log("You're running on Hardhat network, did you forget to use --write on the deploy task?")
       }
       return;
     }
