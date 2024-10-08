@@ -78,8 +78,8 @@ devDependencies:
     specifier: 0.3.2-alpha.1
     version: 0.3.2-alpha.1(hardhat@2.20.1)
   fhenix-hardhat-network:
-    specifier: 0.3.2-alpha.1
-    version: 0.3.2-alpha.1(@fhenixprotocol/contracts@0.3.0)(hardhat@2.20.1)
+    specifier: 0.3.2-alpha.2
+    version: 0.3.2-alpha.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.20.1)
   fhenix-hardhat-plugin:
     specifier: 0.3.2-alpha.1
     version: 0.3.2-alpha.1(hardhat@2.20.1)
@@ -2538,10 +2538,10 @@ packages:
       hardhat: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
     dev: true
 
-  /fhenix-hardhat-network@0.3.2-alpha.1(@fhenixprotocol/contracts@0.3.0)(hardhat@2.20.1):
-    resolution: {integrity: sha512-6O7aW6vD1yuo7alL2RNIi91nn3MNLO7kWFYqT8mZKauXoxvDeP+T+KuabaaFJpvheH9wa+v81g0B41WtDuLJWw==}
+  /fhenix-hardhat-network@0.3.2-alpha.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.20.1):
+    resolution: {integrity: sha512-S9Z66ef6RyHL/1zUDW5WsBSxw6AGXHlBYYZlyswgOV5PUGuf2IXUS2KaSOVbjfsHVKycF99YpWLuSzgy4tDQsg==}
     peerDependencies:
-      '@fhenixprotocol/contracts': ^0.3.0-alpha.2
+      '@fhenixprotocol/contracts': ^0.3.0
       hardhat: ^2.11.0
     dependencies:
       '@fhenixprotocol/contracts': 0.3.0
