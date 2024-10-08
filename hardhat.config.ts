@@ -41,7 +41,7 @@ if (!keys) {
 
 const config: HardhatUserConfig = {
   solidity: "0.8.25",
-  defaultNetwork: "hardhat",
+  defaultNetwork: "localfhenix",
   networks: {
     testnet: testnetConfig,
   },
