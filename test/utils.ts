@@ -1,4 +1,4 @@
-export async function getTokensFromFaucet() {
+export async function getTokensFromFaucet(hre) {
   if (hre.network.name === "localfhenix") {
     const signers = await hre.ethers.getSigners();
 

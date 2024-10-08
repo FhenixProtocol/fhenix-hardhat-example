@@ -14,7 +14,7 @@ describe("Counter", function () {
 
   before(async () => {
     signer = (await ethers.getSigners())[0];
-    await getTokensFromFaucet(hre, signer.address);
+    await getTokensFromFaucet(hre);
 
     const counterFactory = await ethers.getContractFactory("Counter");
     counter = await counterFactory.deploy();

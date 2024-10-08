@@ -7,7 +7,7 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployCounter: DeployFunction = async function (
+const deployCounter: (hre: HardhatRuntimeEnvironment) => Promise<void> = async function (
   hre: HardhatRuntimeEnvironment,
 ) {
   /*
@@ -23,6 +23,9 @@ const deployCounter: DeployFunction = async function (
   const { deployer } = await hre.getNamedAccounts();
   const { deploy, execute } = hre.deployments;
 
+  if (hre.network.name === "hardhat") {
+    console.warn("You are deploying to the Hardhat network. To run tasks, make sure you use the --write flag to persist the deployment");
+  }
   // Fund the account before deploying.
   if (hre.network.name === "localfhenix") {
     if ((await hre.ethers.provider.getBalance(deployer)) === 0n) {
