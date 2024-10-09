@@ -65,6 +65,8 @@ pnpm task:getCount # => 6
 
 This template contains experimental support for testing using Hardhat Network. By importing the `fhenix-hardhat-network` plugin in `hardhat.config.ts` we add support for simulated operations using Hardhat Network. These do not perform the full FHE computations, and are menant to serve as development tools to verify contract logic.
 
+Note that in order meant to be used in tasks, as 
+
 If you have any issues or feature requests regarding this support please open a ticket in this repository 
 
 ## Troubleshooting

@@ -20,7 +20,8 @@ task("task:addCount")
     } catch (e) {
       console.log(`${e}`);
       if (hre.network.name === "hardhat") {
-        console.log("You're running on Hardhat network, did you forget to use --write on the deploy task?")
+        console.log("You're running on Hardhat network, which is ephemeral. Contracts you deployed with deploy scripts are not available.")
+        console.log("Either run the local node with npx hardhat node and use --localhost on tasks, or write tasks that deploy the contracts themselves")
       }
       return;
     }
