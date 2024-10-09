@@ -25,7 +25,7 @@ describe("Counter", function () {
   });
 
   describe("Deployment", function () {
-    it.only("Should have the correct initial count on deploy", async function () {
+    it("Should have the correct initial count on deploy", async function () {
       const counterVal = await counter.getCounter();
       expect(await counter.getCounter()).to.equal(0n);
     });
