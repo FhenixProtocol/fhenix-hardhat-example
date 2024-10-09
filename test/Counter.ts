@@ -3,8 +3,10 @@ import { expect } from "chai";
 import hre, { ethers, fhenixjs } from "hardhat";
 import { Counter } from "../typechain-types";
 import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
-import { getTokensFromFaucet } from "./utils";
-import { createPermissionForContract } from "../utils/instance";
+import {
+  createPermissionForContract,
+  getTokensFromFaucet,
+} from "../utils/instance";
 
 describe("Counter", function () {
   let signer: SignerWithAddress;
@@ -14,7 +16,7 @@ describe("Counter", function () {
 
   before(async () => {
     signer = (await ethers.getSigners())[0];
-    await getTokensFromFaucet(hre);
+    await getTokensFromFaucet(hre, signer.address);
 
     const counterFactory = await ethers.getContractFactory("Counter");
     counter = await counterFactory.deploy();
