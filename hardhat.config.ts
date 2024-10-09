@@ -53,6 +53,9 @@ const config= {
       chainId: 42069,
       accounts: [deployerPrivateKey],
     },
+    localhost: {
+      chainId: 31337,
+    }
   },
   // configuration for harhdat-verify plugin
   etherscan: {
