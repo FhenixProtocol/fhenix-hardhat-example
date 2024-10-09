@@ -7,7 +7,7 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployCounter: (hre: HardhatRuntimeEnvironment) => Promise<void> = async function (
+const deployCounter: DeployFunction = async function (
   hre: HardhatRuntimeEnvironment,
 ) {
   /*
@@ -21,10 +21,10 @@ const deployCounter: (hre: HardhatRuntimeEnvironment) => Promise<void> = async f
     You can run the `yarn account` command to check your balance in every network.
   */
   const { deployer } = await hre.getNamedAccounts();
-  const { deploy, execute } = hre.deployments;
+  const { deploy } = hre.deployments;
 
-  if (hre.network.name === "hardhat") {
-    console.warn("Warning: you are deploying to the Hardhat network, but this network gets destroyed right after the deployment task ends.");
+  if (hre.network.name === "hardhat" && process.argv.includes("deploy")) {
+    console.warn("Warning: you are deploying to the in-process Hardhat network, but this network gets destroyed right after the deployment task ends.");
   }
   // Fund the account before deploying.
   if (hre.network.name === "localfhenix") {
