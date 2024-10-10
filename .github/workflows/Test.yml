@@ -43,10 +43,10 @@ jobs:
         run: "pnpm typechain"
 
       - name: "Make Money"
-        run: "pnpm faucet"
+        run: "pnpm fhenix:faucet"
 
       - name: "Test the contracts using Hardhat Network"
-        run: "pnpm test"
+        run: "pnpm test:hardhat"
 
       - name: "Test the contract using LocalFhenix"
         run: "pnpm test:localfhenix"
