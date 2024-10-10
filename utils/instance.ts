@@ -1,31 +1,13 @@
-import { type SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
-import { type Permission } from "fhenixjs";
-import { type HardhatRuntimeEnvironment } from "hardhat/types/runtime";
+import { HardhatRuntimeEnvironment } from "hardhat/types/runtime";
 
-export const getTokensFromFaucet = async (
+export async function createPermitForContract(
   hre: HardhatRuntimeEnvironment,
-  address: string,
-) => {
-  if (hre.network.name === "localfhenix") {
-    if ((await hre.ethers.provider.getBalance(address)).toString() === "0") {
-      await hre.fhenixjs.getFunds(address);
-    }
-  }
-};
-
-export const createPermissionForContract = async (
-  hre: HardhatRuntimeEnvironment,
-  signer: SignerWithAddress,
   contractAddress: string,
-): Promise<Permission> => {
+): Promise<any> {
   const provider = hre.ethers.provider;
+  const signer = await hre.ethers.getSigners();
+  const fhenixjs = hre.fhenixjs;
 
-  const permit = await hre.fhenixjs.generatePermit(
-    contractAddress,
-    provider,
-    signer,
-  );
-  const permission = hre.fhenixjs.extractPermitPermission(permit);
-
-  return permission;
-};
+  const permit = await fhenixjs.generatePermit(contractAddress, provider, signer[0]);
+  return fhenixjs.extractPermitPermission(permit);
+}
