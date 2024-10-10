@@ -1,4 +1,4 @@
-import { Counter } from "../typechain-types";
+import { Counter } from "../types";
 import { task } from "hardhat/config";
 import type { TaskArguments } from "hardhat/types";
 
@@ -23,13 +23,12 @@ task("task:getCount").setAction(async function (
     undefined, // use the internal provider
     signer,
   );
-  const permission = fhenixjs.extractPermitPermission(permit);
 
-  const result = await contract.getCounterPermit(permission);
+  const result = await contract.getCounterPermit(permit);
   console.log(`got count: ${result.toString()}`);
 
   const sealedResult = await contract.getCounterPermitSealed(permit);
-  let unsealed = fhenixjs.unseal(Counter.address, sealedResult, signer.address);
+  let unsealed = fhenixjs.unseal(Counter.address, sealedResult);
 
   console.log(`got unsealed result: ${unsealed.toString()}`);
 });
