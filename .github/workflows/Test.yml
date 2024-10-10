@@ -16,7 +16,7 @@ jobs:
       # Label used to access the service container
       localfhenix:
         options: --name localfhenix
-        image: ghcr.io/fhenixprotocol/localfhenix:v0.3.2-alpha.4
+        image: ghcr.io/fhenixprotocol/localfhenix:v0.2.3-rc.2
         ports:
           - 42000:3000
           - 42069:8547
