@@ -75,14 +75,14 @@ devDependencies:
     specifier: ^6.10.0
     version: 6.13.3
   fhenix-hardhat-docker:
-    specifier: 0.3.2-alpha.4
-    version: 0.3.2-alpha.4(hardhat@2.22.13)
+    specifier: ^0.3.2
+    version: 0.3.2(hardhat@2.22.13)
   fhenix-hardhat-network:
-    specifier: 0.3.2-alpha.4
-    version: 0.3.2-alpha.4(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13)
+    specifier: ^0.3.2
+    version: 0.3.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13)
   fhenix-hardhat-plugin:
-    specifier: 0.3.2-alpha.4
-    version: 0.3.2-alpha.4(hardhat@2.22.13)
+    specifier: ^0.3.2
+    version: 0.3.2(hardhat@2.22.13)
   fhenixjs:
     specifier: 0.4.0
     version: 0.4.0
@@ -2425,8 +2425,8 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fhenix-hardhat-docker@0.3.2-alpha.4(hardhat@2.22.13):
-    resolution: {integrity: sha512-Oa5XquuJh8PAOtcGmmlvNXYdtWh+qgBNJJ8kEfFopaF7vEiNMm2/38A1KbT40fESgHc4Z8jJji2oh8o2/thNsQ==}
+  /fhenix-hardhat-docker@0.3.2(hardhat@2.22.13):
+    resolution: {integrity: sha512-fqPzwt0EqxvVg5hr1LVJ8BKyvQeOFITWv+ieyQMtd0o4DYobKUw6g3t4o9OKMs4eT+V8/lAyGFjDLxD2BBRKhA==}
     peerDependencies:
       hardhat: ^2.11.0
     dependencies:
@@ -2434,8 +2434,8 @@ packages:
       hardhat: 2.22.13(ts-node@10.9.2)(typescript@5.6.3)
     dev: true
 
-  /fhenix-hardhat-network@0.3.2-alpha.4(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13):
-    resolution: {integrity: sha512-wlhhDkw681pfNatWQL78BOCc+xvg7zB0gCVvT1hS5ETaukoJdvKC9wibP8cGupIGAVxnbrAUD5Bdu9vDQZ4Q5A==}
+  /fhenix-hardhat-network@0.3.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13):
+    resolution: {integrity: sha512-cvnGKGxDtHobl8np2Fxw4/n39AGARVCmk+DyAnc68XHBeaRtY3l8Iwkwb4LFN4N6RKJXx1VhEcSfpLO3tS8uiw==}
     peerDependencies:
       '@fhenixprotocol/contracts': ^0.3.0
       hardhat: ^2.11.0
@@ -2445,15 +2445,15 @@ packages:
       hardhat: 2.22.13(ts-node@10.9.2)(typescript@5.6.3)
     dev: true
 
-  /fhenix-hardhat-plugin@0.3.2-alpha.4(hardhat@2.22.13):
-    resolution: {integrity: sha512-5LpXYkk5HhXmGtg69xNE+5d+QTXpXA8j9KK9OVPvCtidJQsPF9tWQcI37S2N3cHVwoMwgGcuxk7V7KYjJUgCjQ==}
+  /fhenix-hardhat-plugin@0.3.2(hardhat@2.22.13):
+    resolution: {integrity: sha512-cH1rONJv8OKE+nKu/iViLyLsGHfAKuE1z+rMPFdPuDkFjzmeWEMF6qsQgjjrzrG9PuksRU3rAzuhsadCKp4Fmw==}
     peerDependencies:
       hardhat: ^2.11.0
     dependencies:
       axios: 1.7.7
       chalk: 4.1.2
       ethers: 6.13.3
-      fhenixjs: 0.4.0
+      fhenixjs: 0.4.1
       hardhat: 2.22.13(ts-node@10.9.2)(typescript@5.6.3)
     transitivePeerDependencies:
       - bufferutil
@@ -2463,6 +2463,15 @@ packages:
 
   /fhenixjs@0.4.0:
     resolution: {integrity: sha512-8N4sB5pydspKP3A+SkEs12zPLpZ0RDtyvFwX8CaHywTtnqHaB7mL7nAfQiTH9vOUv9xC34r3g1YzcpaaRFjiyQ==}
+    engines: {node: '>=20.0.0'}
+    dependencies:
+      '@types/node': 20.16.11
+      tweetnacl: 1.0.3
+      tweetnacl-util: 0.15.1
+    dev: true
+
+  /fhenixjs@0.4.1:
+    resolution: {integrity: sha512-q+IgMHFhTrXpsdrDox67Qw4InffCPYiNnXpn8cUThmfKMLGOhVzp4TgMc4xG5yajVroIw+Fle1C8SJILxG+BVQ==}
     engines: {node: '>=20.0.0'}
     dependencies:
       '@types/node': 20.16.11
