@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^5.7.1
     version: 5.7.2
   '@fhenixprotocol/contracts':
-    specifier: 0.3.0
-    version: 0.3.0
+    specifier: ^0.3.1
+    version: 0.3.1
   '@nomicfoundation/hardhat-chai-matchers':
     specifier: ^2.0.3
     version: 2.0.8(@nomicfoundation/hardhat-ethers@3.0.8)(chai@4.5.0)(ethers@6.13.3)(hardhat@2.22.13)
@@ -79,7 +79,7 @@ devDependencies:
     version: 0.3.2(hardhat@2.22.13)
   fhenix-hardhat-network:
     specifier: ^0.3.2
-    version: 0.3.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13)
+    version: 0.3.2(@fhenixprotocol/contracts@0.3.1)(hardhat@2.22.13)
   fhenix-hardhat-plugin:
     specifier: ^0.3.2
     version: 0.3.2(hardhat@2.22.13)
@@ -112,7 +112,7 @@ devDependencies:
     version: 0.8.13(hardhat@2.22.13)
   ts-node:
     specifier: ^10.9.1
-    version: 10.9.2(@types/node@22.7.5)(typescript@5.6.3)
+    version: 10.9.2(@types/node@22.9.0)(typescript@5.6.3)
   typechain:
     specifier: ^8.1.0
     version: 8.3.2(typescript@5.6.3)
@@ -505,8 +505,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fhenixprotocol/contracts@0.3.0:
-    resolution: {integrity: sha512-6X5DWFKYmsNu1W3Mh1Y/azrL/cetBK2E17otMKsfN+Jgv1zXa+mBEP7jnRRdShIe40rgAVTtn9PD/XgTH58cCA==}
+  /@fhenixprotocol/contracts@0.3.1:
+    resolution: {integrity: sha512-zcxtmphGsInU+S9y5SPrrGO52ZCRDt8EpR/Jf47P5m5sGZVXyox8xPBYQs69V9NpGbORFYAewsGVWzqmvlzeAw==}
     dependencies:
       '@openzeppelin/contracts': 5.0.2
     dev: true
@@ -1094,6 +1094,12 @@ packages:
 
   /@types/node@22.7.5:
     resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
+    dependencies:
+      undici-types: 6.19.8
+    dev: true
+
+  /@types/node@22.9.0:
+    resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
     dependencies:
       undici-types: 6.19.8
     dev: true
@@ -2434,13 +2440,13 @@ packages:
       hardhat: 2.22.13(ts-node@10.9.2)(typescript@5.6.3)
     dev: true
 
-  /fhenix-hardhat-network@0.3.2(@fhenixprotocol/contracts@0.3.0)(hardhat@2.22.13):
+  /fhenix-hardhat-network@0.3.2(@fhenixprotocol/contracts@0.3.1)(hardhat@2.22.13):
     resolution: {integrity: sha512-cvnGKGxDtHobl8np2Fxw4/n39AGARVCmk+DyAnc68XHBeaRtY3l8Iwkwb4LFN4N6RKJXx1VhEcSfpLO3tS8uiw==}
     peerDependencies:
       '@fhenixprotocol/contracts': ^0.3.0
       hardhat: ^2.11.0
     dependencies:
-      '@fhenixprotocol/contracts': 0.3.0
+      '@fhenixprotocol/contracts': 0.3.1
       chalk: 4.1.2
       hardhat: 2.22.13(ts-node@10.9.2)(typescript@5.6.3)
     dev: true
@@ -2932,7 +2938,7 @@ packages:
       solc: 0.8.26(debug@4.3.7)
       source-map-support: 0.5.21
       stacktrace-parser: 0.1.10
-      ts-node: 10.9.2(@types/node@22.7.5)(typescript@5.6.3)
+      ts-node: 10.9.2(@types/node@22.9.0)(typescript@5.6.3)
       tsort: 0.0.1
       typescript: 5.6.3
       undici: 5.28.4
@@ -4428,7 +4434,7 @@ packages:
       typescript: 5.6.3
     dev: true
 
-  /ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.3):
+  /ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -4447,7 +4453,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.7.5
+      '@types/node': 22.9.0
       acorn: 8.12.1
       acorn-walk: 8.3.4
       arg: 4.1.3
