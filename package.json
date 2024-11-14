@@ -60,7 +60,7 @@
     "fhenix-hardhat-docker": "^0.3.2",
     "fhenix-hardhat-network": "^0.3.2",
     "fhenix-hardhat-plugin": "^0.3.2",
-    "fhenixjs": "0.4.0",
+    "fhenixjs": "0.4.1",
     "hardhat": "^2.19.4",
     "hardhat-deploy": "^0.12.0",
     "hardhat-deploy-ethers": "^0.4.1",
