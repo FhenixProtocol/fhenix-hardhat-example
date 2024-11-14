@@ -53,6 +53,11 @@ const config= {
       chainId: 42069,
       accounts: [deployerPrivateKey],
     },
+    nitrogen: {
+      url: "https://api.nitrogen.fhenix.zone",
+      chainId: 8008148,
+      accounts: [deployerPrivateKey],
+    },
     localhost: {
       chainId: 31337,
     }
