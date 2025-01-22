@@ -15,39 +15,40 @@ import "fhenix-hardhat-network";
 
 import "./tasks";
 
-// If not set, it uses ours Alchemy's default API key.
+// If not set, it uses our default Alchemy API key.
 // You can get your own at https://dashboard.alchemyapi.io
 const providerApiKey =
   process.env.ALCHEMY_API_KEY || "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
-// If not set, it uses the hardhat account 0 private key.
+
+// If not set, it uses the Hardhat default account (index 0).
 const deployerPrivateKey =
   process.env.DEPLOYER_PRIVATE_KEY ??
   "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
-// If not set, it uses ours Etherscan default API key.
+
+// If not set, it uses our default Etherscan API key.
 const etherscanApiKey =
   process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
-const config= {
+const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.24",
     settings: {
       optimizer: {
         enabled: true,
-        // https://docs.soliditylang.org/en/latest/using-the-compiler.html#optimizer-options
-        runs: 200,
+        runs: 200, // Recommended Solidity optimizer settings
       },
     },
   },
+  // The default network for deployments and interactions
   defaultNetwork: "localfhenix",
   namedAccounts: {
     deployer: {
-      // By default, it will take the first Hardhat account as the deployer
-      default: 0,
+      default: 0, // Uses the first Hardhat account as deployer
     },
   },
   networks: {
-    // View the networks that are pre-configured.
-    // If the network you are looking for is not here you can add new network settings
+    // These are the pre-configured networks. 
+    // If the one you need is missing, you can add it below.
     helium: {
       url: "https://api.testnet.fhenix.zone:7747",
       chainId: 42069,
@@ -60,16 +61,19 @@ const config= {
     },
     localhost: {
       chainId: 31337,
-    }
+    },
+    hardhat: {
+      chainId: 31337,
+    },
   },
-  // configuration for harhdat-verify plugin
+  // Configuration for hardhat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: etherscanApiKey,
   },
-  // configuration for etherscan-verify from hardhat-deploy plugin
+  // Configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
     etherscan: {
-      apiKey: `${etherscanApiKey}`,
+      apiKey: etherscanApiKey,
     },
   },
   sourcify: {
