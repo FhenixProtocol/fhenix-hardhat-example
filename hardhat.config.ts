@@ -27,7 +27,7 @@ const deployerPrivateKey =
 const etherscanApiKey =
   process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
-const config= {
+const config = {
   solidity: {
     version: "0.8.24",
     settings: {
@@ -60,7 +60,7 @@ const config= {
     },
     localhost: {
       chainId: 31337,
-    }
+    },
   },
   // configuration for harhdat-verify plugin
   etherscan: {

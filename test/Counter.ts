@@ -7,6 +7,8 @@ import {
   createPermissionForContract,
   getTokensFromFaucet,
 } from "../utils/instance";
+import { cofhejs } from "cofhejs/node";
+import { TypedDataField } from "ethers";
 
 describe("Counter", function () {
   let signer: SignerWithAddress;
@@ -25,6 +27,33 @@ describe("Counter", function () {
   });
 
   describe("Deployment", function () {
+    it("should initialize cofhejs", async function () {
+      const coFheUrl = "http://127.0.0.1:3000";
+
+      await cofhejs.initialize({
+        provider: {
+          call: async (...args) => {
+            try {
+              return signer.provider.call(...args);
+            } catch (e) {
+              throw new Error(`cofhejs initializeWithHHSigner :: call :: ${e}`);
+            }
+          },
+          getChainId: async () =>
+            (await signer.provider.getNetwork()).chainId.toString(),
+        },
+        signer: {
+          signTypedData: async (domain, types, value) =>
+            signer.signTypedData(
+              domain,
+              types as Record<string, TypedDataField[]>,
+              value,
+            ),
+          getAddress: async () => signer.getAddress(),
+        },
+        coFheUrl,
+      });
+    });
     it("Should have the correct initial count on deploy", async function () {
       const counterVal = await counter.getCounter();
       expect(await counter.getCounter()).to.equal(0n);
