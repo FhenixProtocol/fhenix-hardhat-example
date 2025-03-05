@@ -53,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "chai": "^4.3.6",
+    "cofhejs": "0.0.1-alpha.13",
     "dotenv": "^16.0.3",
     "envfile": "^6.18.0",
     "eslint": "^8.26.0",
