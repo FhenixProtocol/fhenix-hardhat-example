@@ -1,3 +1,6 @@
+> ⚠️ **This repository is archived, no longer maintained.**  
+> Please use [cofhe-hardhat-starter](https://github.com/FhenixProtocol/cofhe-hardhat-starter) instead.
+
 # Fhenix Hardhat Example [![Open in Gitpod][gitpod-badge]][gitpod]
 
 [gitpod]: https://gitpod.io/#https://github.com/fhenixprotocol/fhenix-hardhat-example
